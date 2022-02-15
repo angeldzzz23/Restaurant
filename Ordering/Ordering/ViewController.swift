@@ -7,13 +7,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITabBarController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+            createTabBarController()
+            view.backgroundColor = .white
     }
+    
+    func createTabBarController() {
+   
+        let firstViewController = VC2()
+        firstViewController.title = "first"
+        firstViewController.tabBarItem.image = UIImage(systemName: "list.bullet")
+        
+        let second = Order()
+        second.title = "order"
+        second.tabBarItem.image = UIImage(systemName: "bag")
+        
+        self.setViewControllers([firstViewController, second], animated: true)
+
+        
+        
+        
+    }
+    
+    
 
 
 }

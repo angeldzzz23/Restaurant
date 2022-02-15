@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4D051627BC378500136597 /* VC2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D051527BC378500136597 /* VC2.swift */; };
+		1C4D051827BC431E00136597 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4D051727BC431E00136597 /* Order.swift */; };
 		1CCC30FF27BB0BBA00E0236A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC30FE27BB0BBA00E0236A /* AppDelegate.swift */; };
 		1CCC310127BB0BBA00E0236A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC310027BB0BBA00E0236A /* SceneDelegate.swift */; };
 		1CCC310327BB0BBA00E0236A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCC310227BB0BBA00E0236A /* ViewController.swift */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C4D051527BC378500136597 /* VC2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC2.swift; sourceTree = "<group>"; };
+		1C4D051727BC431E00136597 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		1CCC30FB27BB0BBA00E0236A /* Ordering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ordering.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CCC30FE27BB0BBA00E0236A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CCC310027BB0BBA00E0236A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				1CCC30FE27BB0BBA00E0236A /* AppDelegate.swift */,
 				1CCC310027BB0BBA00E0236A /* SceneDelegate.swift */,
 				1CCC310227BB0BBA00E0236A /* ViewController.swift */,
+				1C4D051527BC378500136597 /* VC2.swift */,
+				1C4D051727BC431E00136597 /* Order.swift */,
 				1CCC310727BB0BBA00E0236A /* Assets.xcassets */,
 				1CCC310927BB0BBA00E0236A /* LaunchScreen.storyboard */,
 				1CCC310C27BB0BBA00E0236A /* Info.plist */,
@@ -136,7 +142,9 @@
 			files = (
 				1CCC310327BB0BBA00E0236A /* ViewController.swift in Sources */,
 				1CCC30FF27BB0BBA00E0236A /* AppDelegate.swift in Sources */,
+				1C4D051827BC431E00136597 /* Order.swift in Sources */,
 				1CCC310127BB0BBA00E0236A /* SceneDelegate.swift in Sources */,
+				1C4D051627BC378500136597 /* VC2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
