@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VC2: UIViewController {
+class MenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

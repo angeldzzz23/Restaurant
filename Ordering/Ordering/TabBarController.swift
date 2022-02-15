@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITabBarController {
+class TabBarController: UITabBarController {
 
     
     override func viewDidLoad() {
@@ -19,19 +19,16 @@ class ViewController: UITabBarController {
     
     func createTabBarController() {
    
-        let firstViewController = VC2()
+        let firstViewController = MenuVC()
         firstViewController.title = "first"
         firstViewController.tabBarItem.image = UIImage(systemName: "list.bullet")
         
-        let second = Order()
+        let second = OrderVC()
         second.title = "order"
         second.tabBarItem.image = UIImage(systemName: "bag")
         
         self.setViewControllers([firstViewController, second], animated: true)
-
-        
-        
-        
+   
     }
     
     
