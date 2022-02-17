@@ -71,10 +71,13 @@ class MenuVC: UIViewController {
         
         
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+//        layout.itemSize = CGSize(width: 20, height: 20)
+//        UICollectionViewFlowLayout.automaticSize
         layout.invalidateLayout()
         layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         layout.minimumLineSpacing = 20
         layout.minimumInteritemSpacing = 20
+        
         
         // adding a title to the navigation bar
         self.navigationItem.title = "collectionviews"
@@ -99,7 +102,7 @@ class MenuVC: UIViewController {
         
         //
         // TODO 5: Extend collection view delegate.
-//        filtCollectionView.delegate = self
+        filtCollectionView.delegate = self
         
         //
         view.addSubview(filtCollectionView)
@@ -115,7 +118,7 @@ class MenuVC: UIViewController {
         layout.scrollDirection = .vertical
         
         
-//        layout.estimatedItemSize = UICollectionViewFlowLayout.
+//        layout.estimatedItemSize = UICollectionViewFlowLayout(cg)
 //        layout.invalidateLayout()
 //        layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
 //        layout.minimumLineSpacing = 20
@@ -190,7 +193,6 @@ extension MenuVC: UICollectionViewDataSource {
         
         
         if collectionView == foodCollectionView {
-            print("hey")
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identif, for: indexPath) as! FoodCollectionViewCell
             cell.contentView.layer.cornerRadius = 10
             cell.cview.layer.cornerRadius = 10
@@ -204,7 +206,7 @@ extension MenuVC: UICollectionViewDataSource {
             cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
             
             return cell
-
+            
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identif, for: indexPath)
@@ -222,12 +224,20 @@ extension MenuVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let bounds = collectionView.bounds
-        let heightVal = self.view.frame.height
-        let widthVal = self.view.frame.width
-        let cellsize = (heightVal < widthVal) ?  bounds.height/2 : bounds.width
-        
-        return CGSize(width: cellsize - 55   , height:  cellsize  - 70  )
+        if collectionView ==  foodCollectionView{
+            let bounds = collectionView.bounds
+            let heightVal = self.view.frame.height
+            let widthVal = self.view.frame.width
+            let cellsize = (heightVal < widthVal) ?  bounds.height/2 : bounds.width
+            
+            return CGSize(width: cellsize - 55   , height:  cellsize  - 70  )
+        } else {
+            
+            
+            return CGSize(width: 20, height: 20)
+            
+        }
+     
         
     }
 }
@@ -239,18 +249,23 @@ extension MenuVC: UICollectionViewDelegate {
 
     
     // TODO 9: provide selection functionality
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        // select the correct collection view
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        
+        if collectionView == filtCollectionView {
+            print("hey!!")
+        }
+        
+        // select the correct collection view
 //            filters.forEach({$0.selected = false}) // deselects
-//
+
 //            filters[indexPath.item].selected = !filters[indexPath.item].selected
-//
-//
-//
-//
+
+
+
+
 //            collectionView.reloadData()
-//
-//
-//    }
+
+
+    }
 }

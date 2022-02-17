@@ -10,8 +10,7 @@ import UIKit
 class FilterCollectionViewCell: UICollectionViewCell {
     private var filtLabel: UILabel = UILabel()
     
-    private var button: UIButton = UIButton(type: .system)
-    
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
        
@@ -26,16 +25,6 @@ class FilterCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 12
         
         
-        button.imageView?.image = UIImage(named: "close-4")!
-        button.setImage(UIImage(named: "close-4")!, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-        button.tintColor = UIColor(red: 46/255, green: 78/255, blue: 136/255, alpha: 1)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.translatesAutoresizingMaskIntoConstraints = false
-        button.imageView?.widthAnchor.constraint(equalToConstant: 10).isActive = true
-        button.imageView?.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        
-//        contentView.addSubview(button)
 
   
         setUpConstraints()
