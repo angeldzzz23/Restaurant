@@ -10,20 +10,22 @@ import UIKit
 class TabBarController: UITabBarController {
 
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
             createTabBarController()
             view.backgroundColor = .white
+        tabBar.barTintColor = .darkGray
     }
     
     func createTabBarController() {
    
-        let firstViewController = MenuVC()
+        let firstViewController =  UINavigationController(rootViewController:  MenuVC())
         firstViewController.title = "first"
         firstViewController.tabBarItem.image = UIImage(systemName: "list.bullet")
         
-        let second = OrderVC()
+        let second = UINavigationController(rootViewController:  OrderVC())
         second.title = "order"
         second.tabBarItem.image = UIImage(systemName: "bag")
         

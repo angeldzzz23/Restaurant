@@ -11,9 +11,10 @@ class OrderVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "order"
+        navigationItem.title = "Order"
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-        
+    
     }
     
 }
