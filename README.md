@@ -3,7 +3,7 @@
 This is a project based off of the restaurant assingment from the iOS Data Collections book. I am implementing some key features that differentiate it from the assignement on the book.
  
  # Currenly working on: 
- - working on the displaying on fetching the products and displayin them on the collectionview. 
+ - displaying on fetching the products and displayin them on the collectionview. 
 
  
 # Key Differences: 
