@@ -16,13 +16,14 @@ class MenuVC: UIViewController {
     private var filtCollectionView: UICollectionView! // the filter collection view
     
     private var foodCollectionView: UICollectionView!
+        
+    let menuController = MenuController()
     
-    let table = ["angel", "angel", "angel","angel", "angel", "angel", "angel", "angel"]
     
     
     
     // these values will be replaced with the values that we reques
-    let values = ["appetizers",  "salads", "soups", "entrees", "desserts", "sandwiches", "tortas"]
+    var categories = [String]()
     
     var tableView = UITableView()
     
@@ -42,16 +43,44 @@ class MenuVC: UIViewController {
         foodCollectionViewSetUp()
        
 
-        
+       Task.init {
+           do {
+               let categories = try await menuController.fetchCategories()
+                        updateUI(with: categories)
+                    } catch {
+                        displayError(error, title: "Failed to Fetch Categories")
+                    }
+                }
 
         
         
     }
+                                     
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tableView.contentSize.height = 100
     }
+                                     
+    func updateUI(with categories: [String]) {
+        print(categories)
+        self.categories = categories
+        self.filtCollectionView.reloadData()
+        
+    }
+    
+     func displayError(_ error: Error, title: String) {
+        guard let _ = viewIfLoaded?.window else { return }
+         
+        let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss",
+           style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+            
+      }
+                        
+      
     
     
     func setupConstraints() {
@@ -171,7 +200,7 @@ extension MenuVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == filtCollectionView{
-            return values.count
+            return categories.count
         }
         
         return 20
@@ -186,7 +215,7 @@ extension MenuVC: UICollectionViewDataSource {
         
         if collectionView == filtCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: filtCellReuseIdentifier, for: indexPath) as! FilterCollectionViewCell
-            cell.conf(str: values[indexPath.item])
+            cell.conf(str: categories[indexPath.item])
             
             return cell
         }
