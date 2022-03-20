@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
     func createTabBarController() {
    
         let firstViewController =  UINavigationController(rootViewController:  MenuVC())
-        firstViewController.title = "first"
+        firstViewController.title = "Menu"
         firstViewController.tabBarItem.image = UIImage(systemName: "list.bullet")
         
         let second = UINavigationController(rootViewController:  OrderVC())

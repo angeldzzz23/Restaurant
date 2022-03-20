@@ -80,7 +80,7 @@ class MenuVC: UIViewController {
         
         
         // adding a title to the navigation bar
-        self.navigationItem.title = "collectionviews"
+        self.navigationItem.title = "Menu"
         
         
         // TODO 1: Instantiate collectionView
@@ -108,7 +108,7 @@ class MenuVC: UIViewController {
         view.addSubview(filtCollectionView)
         
         setupConstraints()
-        filtCollectionView.backgroundColor = .red
+//        filtCollectionView.backgroundColor = .red
     }
     
     let identif = "identifier123"
